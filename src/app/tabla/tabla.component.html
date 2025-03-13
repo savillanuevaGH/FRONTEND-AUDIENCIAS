@@ -1,27 +1,40 @@
-<mat-form-field>
-    <mat-label>Filter</mat-label>
-    <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
-  </mat-form-field>
-
 <table  mat-table [dataSource]="dataSource" class="mat-elevation-z8">
   <ng-container matColumnDef="CUIJ">
-    <th mat-header-cell *matHeaderCellDef> CUIJ </th>
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> CUIJ </th>
     <td mat-cell *matCellDef="let audiencia"> {{ audiencia.CUIJ }} </td>
   </ng-container>
   <ng-container matColumnDef="caratula">
-    <th mat-header-cell *matHeaderCellDef> Carátula </th>
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Carátula </th>
     <td mat-cell *matCellDef="let audiencia"> {{ audiencia.caratula }} </td>
   </ng-container>
   <ng-container matColumnDef="tipo">
-    <th mat-header-cell *matHeaderCellDef> Tipo De audiencia </th>
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Tipo De audiencia </th>
     <td mat-cell *matCellDef="let audiencia"> {{ audiencia.tipo }} </td>
   </ng-container>
   <ng-container matColumnDef="accion">
     <th mat-header-cell *matHeaderCellDef> Acciones </th>
-    <td mat-cell *matCellDef="let audiencia"> ACTION BUTTONS </td>
+    <td mat-cell *matCellDef="let audiencia">
+      <nav class="inlineflex">
+        <div class="separator">
+          <button mat-icon-button aria-label="Example icon button with a edit icon">
+            <mat-icon>edit</mat-icon>
+          </button>
+        </div>
+
+        <div class="separator">
+          <button mat-icon-button aria-label="Example icon button with a copy icon">
+            <mat-icon>content_copy</mat-icon>
+          </button>
+        </div>
+  
+        <div class="separator">
+          <button mat-icon-button aria-label="Example icon button with a delete icon">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </div>
+      </nav>
   </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-
 </table>

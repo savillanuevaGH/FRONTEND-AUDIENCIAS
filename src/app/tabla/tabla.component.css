@@ -1,0 +1,21 @@
+table {
+    width: 100%;
+  }
+  
+  .mat-mdc-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+
+  th,
+  td {
+    width: 25%;
+  }
+
+  .inlineflex {
+    display: inline-flex;
+  }
+  
+  .separator {
+    margin: .1rem;
+  }

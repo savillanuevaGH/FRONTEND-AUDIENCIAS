@@ -10,6 +10,12 @@ export interface Audiencia {
 const AUDIENCIA_DATA: Audiencia[] = [
   {CUIJ: 1, caratula: 'Cara Tula', tipo: 1},
   {CUIJ: 2, caratula: 'Cara Tula', tipo: 2},
+  {CUIJ: 3, caratula: 'Cara Tula', tipo: 1},
+  {CUIJ: 1, caratula: 'Cara Tula', tipo: 1},
+  {CUIJ: 2, caratula: 'Cara Tula', tipo: 2},
+  {CUIJ: 3, caratula: 'Cara Tula', tipo: 1},
+  {CUIJ: 1, caratula: 'Cara Tula', tipo: 1},
+  {CUIJ: 2, caratula: 'Cara Tula', tipo: 2},
   {CUIJ: 3, caratula: 'Cara Tula', tipo: 1}
 ];
 
@@ -17,7 +23,7 @@ const AUDIENCIA_DATA: Audiencia[] = [
   selector: 'app-tabla',
   standalone: false,
   templateUrl: './tabla.component.html',
-  styleUrl: './tabla.component.css'
+  styleUrl: './tabla.component.css',
 })
 export class TablaComponent {
   displayedColumns: string[] = ['CUIJ', 'caratula', 'tipo', 'accion'];

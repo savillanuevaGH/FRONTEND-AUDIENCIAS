@@ -1,13 +1,26 @@
 <style>
-  
+  body {
+    background: gainsboro;
+  }
 </style>
-
-<main class="main">
-  <header>
-    <h1>Audiencias</h1>
-  </header>
-
-  <app-tabla />
-</main>
+<body>
+  <main class="main">
+    <header>
+      <h1>Audiencias</h1>
+    </header>
+  
+    <form class="management">
+        <h2>
+          Gestión de audiencias
+        </h2>
+        <div>
+          <app-busqueda />
+        </div>
+        <div>
+          <app-tabla />
+        </div> 
+    </form>
+  </main>
+</body>
 
 <router-outlet />

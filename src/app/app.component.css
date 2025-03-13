@@ -1,0 +1,16 @@
+.flex {
+    display: flex;
+  }
+
+.inlineflex {
+    display: inline-flex;
+}
+
+fieldset {
+  width: 50%;
+}
+
+.management {
+  padding: 1rem;
+  background-color: whitesmoke;
+}
