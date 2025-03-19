@@ -1,0 +1,40 @@
+<mat-sidenav-container class="container">
+  <!-- Barra lateral -->
+  <mat-sidenav #sidenav mode="side" opened>
+    <mat-toolbar>
+      <mat-icon>menu_open</mat-icon>
+      Menú
+    </mat-toolbar>
+    <mat-list>
+      <mat-list-item>
+        <button mat-fab extended (click)="navigate('audiencias')" class="custom-fab">
+          <mat-icon>view_list</mat-icon>
+          Ver Audiencias
+        </button>
+      </mat-list-item>
+    </mat-list>
+  </mat-sidenav>
+
+  <!-- Contenido principal -->
+  <mat-sidenav-content class="content">
+    <mat-toolbar color="primary">
+      <button mat-icon-button (click)="toggleSidebar()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <header>
+        <h1>Audiencias</h1>
+      </header>
+    </mat-toolbar>
+
+    <div class="main-content">
+      <main>
+        <h3 *ngIf="showWelcomeMessage">!!!Bienvenido¡¡¡</h3>
+        <router-outlet></router-outlet>
+      </main>
+
+      <footer>
+        <h1>Footer Audiencias</h1>
+      </footer>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

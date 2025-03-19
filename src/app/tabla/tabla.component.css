@@ -1,0 +1,23 @@
+* {
+    box-sizing: border-box;
+}
+
+table {
+    border-collapse: collapse;
+    padding: .5rem;
+    width: 100%;
+}
+
+.mat-mdc-form-field {
+    padding: .5rem;
+    font-size: 20px;
+    width: 100%;
+}
+
+td, th {
+    width: 25%;
+}
+
+th {
+    background: darkslategray;
+}
