@@ -1,0 +1,12 @@
+h2 {
+    margin-bottom: 1.2rem;
+    background: darkgray;
+
+    font-weight: 900;
+}
+
+.dialog-content {
+    height: max-content;
+    width: fit-content;
+    padding-top: 2rem;
+}

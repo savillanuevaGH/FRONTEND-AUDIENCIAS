@@ -1,0 +1,38 @@
+<h2 mat-dialog-title>Nueva Audiencia</h2>
+
+<mat-dialog-content class="dialog-content">
+  <mat-form-field>
+    <mat-label>CUIJ</mat-label>
+    <input matInput [(ngModel)]="data.CUIJ">
+    @if (data.CUIJ) {
+        <button matSuffix mat-icon-button aria-label="Clear" (click)="data.CUIJ=''">
+          <mat-icon>close</mat-icon>
+        </button>
+      }
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Carátula</mat-label>
+    <input matInput [(ngModel)]="data.caratula">
+    @if (data.caratula) {
+        <button matSuffix mat-icon-button aria-label="Clear" (click)="data.caratula=''">
+          <mat-icon>close</mat-icon>
+        </button>
+      }
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Tipo</mat-label>
+    <input matInput type="number" [(ngModel)]="data.tipo">
+    @if (data.tipo) {
+        <button matSuffix mat-icon-button aria-label="Clear" (click)="data.tipo=''">
+          <mat-icon>close</mat-icon>
+        </button>
+      }
+  </mat-form-field>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-stroked-button (click)="onNoClick()">Cancelar</button>
+  <button mat-stroked-button color="primary" (click)="save()">Guardar</button>
+</mat-dialog-actions>

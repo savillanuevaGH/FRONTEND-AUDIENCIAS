@@ -21,3 +21,14 @@ td, th {
 th {
     background: darkslategray;
 }
+
+.footer-table {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+
+.add-button {
+    background: #f9f9f9;
+    color: black;
+}

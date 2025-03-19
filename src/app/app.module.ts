@@ -14,19 +14,25 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatListModule } from '@angular/material/list';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { AudienciasComponent } from './audiencias/audiencias.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TablaComponent
+    TablaComponent,
+    AudienciasComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     MatTableModule,
     MatSortModule,
     MatPaginatorModule,
     MatInputModule,
+    MatDialogModule,
     MatFormFieldModule,
     MatSidenavModule,
     MatToolbarModule,

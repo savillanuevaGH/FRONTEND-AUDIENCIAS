@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TablaComponent } from './tabla/tabla.component';
+import { AudienciasComponent } from './audiencias/audiencias.component';
 
 const routes: Routes = [
   { path: 'audiencias', component: TablaComponent },
+  { path: 'crearAudiencia', component: AudienciasComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
 ];
 

@@ -28,5 +28,11 @@
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
 
-    <mat-paginator [pageSizeOptions]="[5, 10, 20]"></mat-paginator>
+    <div class="footer-table">
+      <mat-paginator [pageSizeOptions]="[5, 10, 20]"></mat-paginator>
+      <!-- Botón para abrir el diálogo -->
+      <button mat-icon-button class="add-button" (click)="openDialog()">
+        <mat-icon>add_2</mat-icon>
+      </button>
+    </div>
 </div> 

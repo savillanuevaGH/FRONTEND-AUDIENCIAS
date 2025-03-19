@@ -1,7 +1,9 @@
 import {AfterViewInit, Component, ViewChild, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
+import { AudienciasComponent } from '../audiencias/audiencias.component';
 
 @Component({
   selector: 'app-tabla',
@@ -15,6 +17,8 @@ export class TablaComponent implements OnInit, AfterViewInit {
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
+
+  constructor(public dialog: MatDialog) {}
 
   ngOnInit() {
     this.dataSource.paginator = this.paginator;
@@ -32,6 +36,19 @@ export class TablaComponent implements OnInit, AfterViewInit {
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
     }
+  }
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(AudienciasComponent, {
+      width: '300px',
+      data: { CUIJ: '', caratula: '', tipo: '' }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.dataSource.data = [...this.dataSource.data, result];
+      }
+    });
   }
 }
 
