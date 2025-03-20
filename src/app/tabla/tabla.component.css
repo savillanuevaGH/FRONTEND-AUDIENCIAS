@@ -22,14 +22,26 @@ td, th {
     width: 25%;
 }
 
-th {
-    background: darkslategray;
-}
-
 .footer-table {
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
+}
+
+.expanded-row {
+    background: gainsboro;
+    padding: 1rem;
+    font-size: 1rem;
+}
+
+.mat-table-expandable .mat-row:hover {
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.04);
+}
+
+.expand-content {
+    display: flex;
+    justify-content: space-evenly;
 }
 
 .add-button {
