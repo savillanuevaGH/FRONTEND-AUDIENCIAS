@@ -23,18 +23,19 @@
       </button>
       <header>
         <h1>Audiencias</h1>
+
+        <button mat-button (click)="navigate('login')" >Iniciar Sesión</button>
       </header>
     </mat-toolbar>
 
     <div class="main-content">
       <main>
-        <h3 *ngIf="showWelcomeMessage">!!!Bienvenido¡¡¡</h3>
+        <section *ngIf="showWelcomeMessage">
+          <h3>!!!Bienvenido¡¡¡</h3>
+          <p>¿Ya has iniciado sesión?<button mat-button (click)="navigate('login')" class="link-btn">Iniciar Sesión</button></p>
+        </section>
         <router-outlet></router-outlet>
       </main>
-
-      <footer>
-        <h1>Footer Audiencias</h1>
-      </footer>
     </div>
   </mat-sidenav-content>
 </mat-sidenav-container>

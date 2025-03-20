@@ -1,0 +1,53 @@
+* {
+    box-sizing: border-box;
+}
+
+.log-in-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    padding: 2rem;
+
+    background: ghostwhite;
+    border-radius: 10px;
+}
+
+.log-in-form h2 {
+    text-align: center;
+}
+
+fieldset {
+    border-radius: 10px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: white;
+}
+
+legend {
+    font-size: 1rem;
+    margin-left: 6px;
+}
+
+input {
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    margin-inline: 10px;
+
+    font-size: 1rem;
+    border: none;
+}
+
+input::placeholder {
+    font-size: large;
+}
+
+input:focus {
+    outline: none;
+}
+
+.separator {
+    margin: 1.2rem;
+}

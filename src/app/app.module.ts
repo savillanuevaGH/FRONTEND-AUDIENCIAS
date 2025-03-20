@@ -17,12 +17,14 @@ import { MatIconModule } from '@angular/material/icon';
 import { AudienciasComponent } from './audiencias/audiencias.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { FormsModule } from '@angular/forms';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TablaComponent,
-    AudienciasComponent
+    AudienciasComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

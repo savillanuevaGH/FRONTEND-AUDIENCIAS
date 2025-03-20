@@ -9,7 +9,16 @@
   .custom-fab:hover {
     background-color: darkgray; /* Cambiar el color al pasar el ratón */
   }
+
+  .link-btn {
+    background: none;
+    box-shadow: none;
+    color: darkcyan;
+  }
   
+  .link-btn:hover {
+    background-color: rgba(169, 169, 169, .8%);
+  }
 
 /* General container styling */
 .container {
@@ -27,11 +36,17 @@
     margin: 0;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .main-content {
     width: 100%;
   }
   
   /* Header */
   header {
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -47,14 +62,6 @@
     flex-grow: 1;
     padding: 16px;
     background-color: #f9f9f9; /* Fondo para el contenido principal */
-  }
-  
-  footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 8px;
-    margin-top: 16px;
   }
   
   mat-toolbar {
