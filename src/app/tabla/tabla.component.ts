@@ -12,7 +12,7 @@ import { AudienciasComponent } from '../audiencias/audiencias.component';
   styleUrl: './tabla.component.css'
 })
 export class TablaComponent implements OnInit, AfterViewInit {
-  displayedColumns: string[] = ['CUIJ', 'caratula', 'tipo'];
+  displayedColumns: string[] = ['CUIJ', 'caratula', 'tipo', 'acciones'];
   dataSource = new MatTableDataSource(AUDIENCIA_DATA);
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -50,6 +50,31 @@ export class TablaComponent implements OnInit, AfterViewInit {
       }
     });
   }
+
+  editAudiencia(audiencia: Audiencias): void {
+    const dialogRef = this.dialog.open(AudienciasComponent, {
+      width: '300px',
+      data: { ...audiencia } // Pasamos una copia del objeto para editar
+    });
+  
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        const index = this.dataSource.data.findIndex(a => a.CUIJ === audiencia.CUIJ);
+        if (index !== -1) {
+          this.dataSource.data[index] = result;
+          this.dataSource.data = [...this.dataSource.data]; // Actualizar la tabla
+        }
+      }
+    });
+  }
+  
+  deleteAudiencia(audiencia: Audiencias): void {
+    const confirmDelete = confirm(`¿Estás seguro de eliminar la audiencia con CUIJ ${audiencia.CUIJ}?`);
+    if (confirmDelete) {
+      this.dataSource.data = this.dataSource.data.filter(a => a.CUIJ !== audiencia.CUIJ);
+    }
+  }
+  
 }
 
 
