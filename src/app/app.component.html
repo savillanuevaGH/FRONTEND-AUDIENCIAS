@@ -17,21 +17,21 @@
 
   <!-- Contenido principal -->
   <mat-sidenav-content class="content">
-    <mat-toolbar color="primary">
+    <mat-toolbar>
       <button mat-icon-button (click)="toggleSidebar()">
         <mat-icon>menu</mat-icon>
       </button>
       <header>
         <h1>Audiencias</h1>
 
-        <button mat-button (click)="navigate('login')" >Iniciar Sesión</button>
+        <button mat-raised-button (click)="navigate('login')" >Iniciar Sesión</button>
       </header>
     </mat-toolbar>
 
     <div class="main-content">
       <main>
         <section *ngIf="showWelcomeMessage">
-          <h3>!!!Bienvenido¡¡¡</h3>
+          <h3>Bienvenido...</h3>
           <p>¿Ya has iniciado sesión?<button mat-button (click)="navigate('login')" class="link-btn">Iniciar Sesión</button></p>
         </section>
         <router-outlet></router-outlet>

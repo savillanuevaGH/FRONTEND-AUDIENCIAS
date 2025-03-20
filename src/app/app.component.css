@@ -11,9 +11,9 @@
   }
 
   .link-btn {
-    background: none;
+    background-color: transparent;
     box-shadow: none;
-    color: darkcyan;
+    color: red;
   }
   
   .link-btn:hover {

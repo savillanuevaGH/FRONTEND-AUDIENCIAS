@@ -86,6 +86,11 @@
         <p><strong>Fecha:</strong> {{ row.fecha }}</p>
         <p><strong>Hora de inicio:</strong> {{ row.horaInicio }}</p>
         <p><strong>Duración:</strong> {{ row.duracion }} minutos</p>
+        <p><strong>Estado:</strong> 
+          <span [ngClass]="{'estado-activo': row.estado === 1, 'estado-inactivo': row.estado === 0}">
+            ◉
+          </span>
+        </p>        
       </div>
     </td>
   </tr>

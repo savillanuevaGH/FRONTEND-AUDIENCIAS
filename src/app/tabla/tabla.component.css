@@ -67,3 +67,19 @@ td, th {
     background: #f9f9f9;
     color: black;
 }
+
+span {
+    text-align: center;
+    font-size: larger;
+}
+
+.estado-activo {
+    color: rgb(33, 146, 33);
+    font-weight: bold;
+  }
+  
+  .estado-inactivo {
+    color: rgb(155, 11, 11);
+    font-weight: bold;
+  }
+  
