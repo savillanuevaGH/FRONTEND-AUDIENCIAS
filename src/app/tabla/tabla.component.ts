@@ -16,10 +16,36 @@ export class TablaComponent implements OnInit, AfterViewInit {
   dataSource = new MatTableDataSource(AUDIENCIA_DATA);
   expandedRow: Audiencias | null = null;
 
+  filtros: { [key: string]: string } = {
+    fecha: '',
+    sala: '',   // Este campo no está presente en la interfaz, así que puedes eliminarlo si no lo necesitas.
+    juez: '',   // Lo mismo aquí, si no lo tienes, puedes quitarlo.
+    tipoCausa: ''
+  };
+
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-  constructor(public dialog: MatDialog) {}
+  constructor(public dialog: MatDialog) {
+    this.dataSource.filterPredicate = this.customFilter;
+  }
+
+  applyFilter(event: Event, filtro: string): void {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.filtros[filtro] = filterValue.trim().toLowerCase();  // Actualizamos el filtro correspondiente
+
+    // Aplicamos el filtro a la tabla
+    this.dataSource.filter = JSON.stringify(this.filtros);  // Pasamos el objeto de filtros como cadena JSON
+  }
+
+  // Función personalizada para el filtrado
+  customFilter = (data: Audiencias, filter: string): boolean => {
+    const filterObj = JSON.parse(filter);  // Convertimos la cadena JSON a un objeto
+    return (
+      (!filterObj.fecha || data.fecha.toLowerCase().includes(filterObj.fecha)) &&
+      (!filterObj.tipoCausa || data.tipo.toString().toLowerCase().includes(filterObj.tipoCausa))  // Ajustado para tipo (número)
+    );
+  };
 
   ngOnInit() {
     this.dataSource.paginator = this.paginator;
@@ -30,14 +56,14 @@ export class TablaComponent implements OnInit, AfterViewInit {
     this.dataSource.sort = this.sort;
   }
 
-  applyFilter(event: Event) {
-    const filterValue = (event.target as HTMLInputElement).value;
-    this.dataSource.filter = filterValue.trim().toLowerCase();
+  // applyFilter(event: Event) {
+  //   const filterValue = (event.target as HTMLInputElement).value;
+  //   this.dataSource.filter = filterValue.trim().toLowerCase();
   
-    if (this.dataSource.paginator) {
-      this.dataSource.paginator.firstPage();
-    }
-  }
+  //   if (this.dataSource.paginator) {
+  //     this.dataSource.paginator.firstPage();
+  //   }
+  // }
 
   openDialog(): void {
     const dialogRef = this.dialog.open(AudienciasComponent, {
@@ -70,7 +96,7 @@ export class TablaComponent implements OnInit, AfterViewInit {
   }
   
   deleteAudiencia(audiencia: Audiencias): void {
-    const confirmDelete = confirm(`¿Estás seguro de eliminar la audiencia con CUIJ ${audiencia.CUIJ}?`);
+    const confirmDelete = confirm(`¿Estás seguro de cancelar la audiencia con CUIJ ${audiencia.CUIJ}?`);
     if (confirmDelete) {
       this.dataSource.data = this.dataSource.data.filter(a => a.CUIJ !== audiencia.CUIJ);
     }

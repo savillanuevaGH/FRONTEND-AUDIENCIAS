@@ -1,7 +1,28 @@
-<mat-form-field>
-  <mat-label>Filtrar datos</mat-label>
-  <input matInput (keyup)="applyFilter($event)" placeholder="Filtrar" #input>
-</mat-form-field>
+<form>
+  <h2>Filtar audiencias</h2>
+
+  <div class="filters">
+    <mat-form-field>
+      <mat-label>Filtrar por Fecha</mat-label>
+      <input matInput (keyup)="applyFilter($event, 'fecha')" placeholder="Filtrar por Fecha">
+    </mat-form-field>
+    
+    <mat-form-field>
+      <mat-label>Filtrar por Sala</mat-label>
+      <input matInput (keyup)="applyFilter($event, 'sala')" placeholder="Filtrar por Sala">
+    </mat-form-field>
+    
+    <mat-form-field>
+      <mat-label>Filtrar por Juez</mat-label>
+      <input matInput (keyup)="applyFilter($event, 'juez')" placeholder="Filtrar por Juez">
+    </mat-form-field>
+    
+    <mat-form-field>
+      <mat-label>Filtrar por Tipo de Causa</mat-label>
+      <input matInput (keyup)="applyFilter($event, 'tipoCausa')" placeholder="Filtrar por Tipo de Causa">
+    </mat-form-field>    
+  </div>
+</form>
 
 <div class="mat-elevation-z8">
   <table mat-table [dataSource]="dataSource" matSort multiTemplateDataRows class="mat-table">
@@ -48,7 +69,7 @@
 
           <div>
             <button mat-icon-button (click)="deleteAudiencia(audiencia)">
-              <mat-icon>delete</mat-icon>
+              <mat-icon>cancel</mat-icon>
             </button>
           </div>
         </nav>

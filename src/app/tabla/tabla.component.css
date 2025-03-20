@@ -6,6 +6,25 @@
     display: inline-flex;
 }
 
+form {
+    padding: 1rem;
+    background: darkslategray;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+
+    h2 {
+        margin: 0 2rem;
+        color: whitesmoke;
+    }
+}
+
+.filters {
+    padding: .5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 table {
     border-collapse: collapse;
     padding: .5rem;
